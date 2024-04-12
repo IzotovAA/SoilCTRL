@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 } */
+
+a {
+  text-decoration: none;
+  /* color: #000000; */
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  height: 4628px;
+}

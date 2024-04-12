@@ -1,0 +1,44 @@
+.header {
+  width: 100vw;
+  height: 67px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-menu-container {
+    display: flex;
+    width: 37.5vw;
+    justify-content: space-between;
+    margin-right: 7.36vw;
+
+    .header-menu {
+      width: 23.93vw;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      &--item {
+        a {
+          font-size: 16px;
+          line-height: 18.75px;
+          color: #747474;
+        }
+      }
+    }
+
+    .header-button {
+      padding: 12px 32px;
+      font-size: 16px;
+      line-height: 18.75px;
+      border: none;
+      border-radius: 4px;
+      background-color: #272727;
+      color: #ffffff;
+
+      &:hover {
+        background-color: #484848;
+        cursor: pointer;
+      }
+    }
+  }
+}

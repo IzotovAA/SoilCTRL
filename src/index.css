@@ -66,3 +66,30 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  /* color: #000000; */
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  height: 4628px;
+}
+
+.active {
+  color: #272727 !important;
+}
