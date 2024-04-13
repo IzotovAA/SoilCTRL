@@ -1,10 +1,24 @@
 .logo--light {
-  margin-left: 7.36vw;
   width: 179px;
   height: 31px;
+  margin-left: 7.36vw;
+
+  @media screen and (max-width: 1200px) {
+    margin-left: 5.36vw;
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 104px;
+    height: 18px;
+  }
 }
 
 .logo--dark {
   width: 152px;
   height: 27px;
+
+  @media screen and (max-width: 1000px) {
+    width: 104px;
+    height: 18px;
+  }
 }

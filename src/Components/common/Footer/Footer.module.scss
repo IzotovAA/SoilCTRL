@@ -14,8 +14,12 @@
     justify-content: space-between;
     flex-direction: column;
 
+    @media screen and (max-width: 1200px) {
+      width: 89.2vw;
+    }
+
     .detail-container {
-      width: 85.2vw;
+      width: inherit;
       height: 199px;
       display: flex;
       justify-content: space-between;
@@ -24,6 +28,11 @@
         font-size: 18px;
         font-weight: 700;
         line-height: 28.8px;
+
+        @media screen and (max-width: 1000px) {
+          font-size: 16px;
+          line-height: 22.4px;
+        }
       }
 
       hr {
@@ -50,6 +59,10 @@
             line-height: 22.4px;
             opacity: 0.78;
           }
+        }
+
+        @media screen and (max-width: 850px) {
+          width: 18.73vw;
         }
       }
 
@@ -95,9 +108,18 @@
         flex-direction: column;
         justify-content: space-between;
 
+        @media screen and (max-width: 1000px) {
+          width: 40vw;
+        }
+
         h4 {
           font-size: 25px;
           line-height: 35px;
+
+          @media screen and (max-width: 1000px) {
+            font-size: 21px;
+            line-height: 30px;
+          }
         }
 
         hr {
@@ -120,6 +142,11 @@
             border-radius: 4px 0 0 4px;
             background-color: #272727;
             color: #ebf0f94d;
+
+            @media screen and (max-width: 1000px) {
+              font-size: 14px;
+              line-height: 16.06px;
+            }
           }
 
           .button {
@@ -135,6 +162,12 @@
             &:hover {
               background-color: #cecece;
               cursor: pointer;
+            }
+
+            @media screen and (max-width: 1000px) {
+              width: 16vw;
+              font-size: 14px;
+              line-height: 16.41px;
             }
           }
         }

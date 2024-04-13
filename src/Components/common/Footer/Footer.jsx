@@ -14,6 +14,7 @@ export default function Header() {
         <NavLink to="/">
           <Logo type="dark" />
         </NavLink>
+
         <div className={styles["detail-container"]}>
           <div className={styles["social-media"]}>
             <h4>Социальные сети</h4>
@@ -31,6 +32,7 @@ export default function Header() {
               <p>Twitter</p>
             </div>
           </div>
+
           <div className={styles.basic}>
             <h4>Основное</h4>
             <hr />
@@ -43,6 +45,7 @@ export default function Header() {
             <p>Новости</p>
             <p>Контакты</p>
           </div>
+
           <div className={styles.subscription}>
             <h4>Подписаться на обновления</h4>
             <hr />

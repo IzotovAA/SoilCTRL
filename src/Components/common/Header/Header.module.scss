@@ -7,12 +7,14 @@
 
   &-menu-container {
     display: flex;
-    width: 37.5vw;
+    // width: 37.5vw;
+    width: 47.5vw;
     justify-content: space-between;
     margin-right: 7.36vw;
 
     .header-menu {
-      width: 23.93vw;
+      // width: 23.93vw;
+      width: 33.93vw;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -23,6 +25,18 @@
           line-height: 18.75px;
           color: #747474;
         }
+      }
+
+      @media screen and (max-width: 1200px) {
+        width: 48.93vw;
+      }
+
+      @media screen and (min-width: 751px) {
+        display: flex;
+      }
+
+      @media screen and (max-width: 750px) {
+        display: none;
       }
     }
 
@@ -39,6 +53,25 @@
         background-color: #484848;
         cursor: pointer;
       }
+
+      @media screen and (max-width: 1000px) {
+        padding: 6px 16px;
+        font-size: 14px;
+        line-height: 16.41px;
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      width: 57.5vw;
+      margin-right: 5.36vw;
+    }
+
+    @media screen and (max-width: 1000px) {
+      width: 67.5vw;
+    }
+
+    @media screen and (max-width: 750px) {
+      width: 44.02vw;
     }
   }
 }

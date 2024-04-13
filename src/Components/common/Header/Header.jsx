@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
 import Button from "../Button/Button";
 import Logo from "../Logo/Logo";
+import Popup from "../Popup/Popup";
 import styles from "./Header.module.scss";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -21,10 +22,14 @@ export default function Header() {
             <li className={styles["header-menu--item"]}>
               <NavLink to="/directions">Направления</NavLink>
             </li>
+            <li className={styles["header-menu--item"]}>
+              <NavLink to="/news">Новости</NavLink>
+            </li>
           </ul>
           <Button className={styles["header-button"]} onClick={() => {}}>
             Связаться
           </Button>
+          <Popup />
         </div>
       </header>
     </>
