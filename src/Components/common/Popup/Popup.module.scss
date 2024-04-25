@@ -1,5 +1,14 @@
-@media screen and (min-width: 751px) {
+@import "../../../styles/mixins";
+
+@include mobile-above {
   .burger {
     display: none;
+    background-color: #ffffff;
   }
 }
+
+// @media screen and (min-width: 751px) {
+//   .burger {
+//     display: none;
+//   }
+// }

@@ -1,3 +1,5 @@
+@import "../../../styles/mixins";
+
 .header {
   width: 100vw;
   height: 67px;
@@ -5,73 +7,155 @@
   justify-content: space-between;
   align-items: center;
 
+  .logo--light {
+    width: 179px;
+    height: 31px;
+    margin-left: 7.36vw;
+
+    @include tablet {
+      width: 104px;
+      height: 18px;
+    }
+
+    // @media screen and (max-width: 1000px) {
+    //   width: 104px;
+    //   height: 18px;
+    // }
+  }
+
   &-menu-container {
-    display: flex;
     // width: 37.5vw;
     width: 47.5vw;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-right: 7.36vw;
 
-    .header-menu {
-      // width: 23.93vw;
-      width: 33.93vw;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-
-      &--item {
-        a {
-          font-size: 16px;
-          line-height: 18.75px;
-          color: #747474;
-        }
-      }
-
-      @media screen and (max-width: 1200px) {
-        width: 48.93vw;
-      }
-
-      @media screen and (min-width: 751px) {
-        display: flex;
-      }
-
-      @media screen and (max-width: 750px) {
+    nav {
+      @include mobile {
         display: none;
+      }
+
+      .header-menu {
+        // width: 23.93vw;
+        width: 33.93vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &--item {
+          a {
+            font-size: 16px;
+            line-height: 18.75px;
+            color: #747474;
+            position: relative;
+
+            &::after {
+              content: "";
+              position: absolute;
+              left: 50%;
+              bottom: -30%;
+              display: block;
+              width: 0;
+              height: 2px;
+              background: #000000;
+              opacity: 0.6;
+              transition: 0.3s;
+              transform: translateX(-50%);
+            }
+
+            @include hover {
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        @include desktop {
+          width: 48.93vw;
+        }
+
+        // @media screen and (max-width: 1200px) {
+        //   width: 48.93vw;
+        // }
+
+        // @media screen and (min-width: 751px) {
+        //   display: flex;
+        // }
+
+        // @include mobile {
+        //   display: none;
+        // }
+
+        // @media screen and (max-width: 750px) {
+        //   display: none;
+        // }
       }
     }
 
     .header-button {
-      padding: 12px 32px;
-      font-size: 16px;
-      line-height: 18.75px;
-      border: none;
+      width: 144px;
+      height: 43px;
+      // padding: 12px 32px;
+      @include adaptive-font(14, 16);
+      @include adaptive-line-height(16.41, 18.75);
+      // font-size: 16px;
+      // line-height: 18.75px;
+      // border: none;
       border-radius: 4px;
       background-color: #272727;
       color: #ffffff;
 
-      &:hover {
+      @include hover {
         background-color: #484848;
         cursor: pointer;
       }
 
-      @media screen and (max-width: 1000px) {
-        padding: 6px 16px;
-        font-size: 14px;
-        line-height: 16.41px;
+      @include tablet {
+        width: 123px;
+        // padding: 6px 16px;
+        // font-size: 14px;
+        // line-height: 16.41px;
       }
+
+      // @media screen and (max-width: 1000px) {
+      //   padding: 6px 16px;
+      //   font-size: 14px;
+      //   line-height: 16.41px;
+      // }
     }
 
-    @media screen and (max-width: 1200px) {
-      width: 57.5vw;
-      margin-right: 5.36vw;
+    @include desktop {
+      width: 63.5vw;
     }
 
-    @media screen and (max-width: 1000px) {
+    // @media screen and (max-width: 1200px) {
+    //   width: 57.5vw;
+    //   // margin-right: 5.36vw;
+    // }
+
+    @include tablet {
       width: 67.5vw;
     }
 
-    @media screen and (max-width: 750px) {
-      width: 44.02vw;
+    // @media screen and (max-width: 1000px) {
+    //   width: 67.5vw;
+    // }
+
+    @include mobile {
+      // width: 44.02vw;
+      width: 45.02vw;
+      column-gap: 10px;
+      margin-right: 6.36vw;
     }
+
+    // @media screen and (max-width: 750px) {
+    //   width: 44.02vw;
+    // }
+  }
+
+  @include mobile {
+    height: 61px;
   }
 }

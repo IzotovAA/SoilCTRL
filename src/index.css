@@ -77,6 +77,13 @@ button:focus-visible {
   font-style: normal;
 }
 
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 a {
   text-decoration: none;
 }
@@ -85,10 +92,14 @@ ul {
   list-style: none;
 }
 
-main {
-  height: 4628px;
-}
-
 .active {
   color: #272727 !important;
+}
+
+button {
+  border: none;
+}
+
+img {
+  overflow: clip !important;
 }

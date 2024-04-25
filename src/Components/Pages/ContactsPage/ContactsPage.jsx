@@ -1,9 +1,9 @@
 import Layout from "../../Layout/Layout";
 
-export default function AboutPage() {
+export default function ContactsPage() {
   return (
     <Layout>
-      <h1>О нас!</h1>
+      <h1>Контакты!</h1>
     </Layout>
   );
 }

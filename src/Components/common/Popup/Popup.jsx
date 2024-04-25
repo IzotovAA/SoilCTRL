@@ -26,7 +26,11 @@ export default function Popup() {
             // mr: "30px",
             height: "45px",
             width: "45px",
-            "&:hover": { cursor: "pointer" },
+            "&:hover": {
+              cursor: "pointer",
+              backgroundColor: "#dfdfdf",
+              borderRadius: "6px",
+            },
           }}
           onClick={toggleDrawer(true)}
         />

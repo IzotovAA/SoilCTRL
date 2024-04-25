@@ -1,14 +1,13 @@
 import logoLight from "../../../assets/logo-light.png";
 import logoDark from "../../../assets/logo-dark.png";
-import styles from "./Logo.module.scss";
 
-export default function Logo({ type }) {
+export default function Logo({ type, className }) {
   return (
     <>
       {type === "light" ? (
-        <img src={logoLight} alt="logo" className={styles["logo--light"]} />
+        <img src={logoLight} alt="SoilCTRL" className={className} />
       ) : (
-        <img src={logoDark} alt="logo" className={styles["logo--dark"]} />
+        <img src={logoDark} alt="SoilCTRL" className={className} />
       )}
     </>
   );
