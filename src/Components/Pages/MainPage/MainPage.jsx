@@ -4,7 +4,7 @@ import Button from "../../common/Button/Button";
 import aboutFundPic from "../../../assets/about-fund-pic.svg";
 import aboutFundPicMob from "../../../assets/about-fund-pic-mob.svg";
 import partner1 from "../../../assets/partner1.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import team from "../../../assets/team.jpg";
 import teamMob from "../../../assets/team-mob.jpg";
 import principles from "../../../assets/principles-pic.jpg";
@@ -17,8 +17,17 @@ import directionsPic from "../../../assets/directions-pic.svg";
 import directionsPicMob from "../../../assets/directions-pic-mob.svg";
 import { newsData } from "../../../services/newsData";
 import Card from "../../common/Card/Card";
+import { onClickOpenPage, onClickScrollToRef } from "../../../services/onClick";
+import { useRef } from "react";
+import SectionTitle from "../../common/SectionTitle/SectionTitle";
+import Partners from "../../common/Partners/Partners";
+import Questions from "../../common/Questions/Questions";
+import News from "../../common/News/News";
 
 export default function MainPage() {
+  const navigate = useNavigate();
+  const aboutFund = useRef(null);
+
   return (
     <Layout>
       <main>
@@ -32,7 +41,12 @@ export default function MainPage() {
               финансов
             </h1>
 
-            <Button className={styles.button} onClick={() => {}}>
+            <Button
+              className={styles.button}
+              onClick={() => {
+                onClickScrollToRef(aboutFund);
+              }}
+            >
               Подробнее
             </Button>
           </div>
@@ -50,12 +64,11 @@ export default function MainPage() {
           </div>
         </section>
 
-        <section className={styles["about-fund"]}>
+        <section className={styles["about-fund"]} ref={aboutFund}>
           <div className={styles["about-fund-container"]}>
-            <div className={styles["about-fund-title"]}>
-              <hr />
-              <h4>О фонде</h4>
-            </div>
+            <SectionTitle styles={styles} className="about-fund-title">
+              О фонде
+            </SectionTitle>
 
             <div className={styles["about-fund-detail-container"]}>
               <div className={styles["about-fund-detail"]}>
@@ -79,7 +92,12 @@ export default function MainPage() {
                   глубокий анализ капиталов и рыночных возможностей.
                 </p>
 
-                <Button className={styles.button} onClick={() => {}}>
+                <Button
+                  className={styles.button}
+                  onClick={() => {
+                    onClickOpenPage(navigate, "/about");
+                  }}
+                >
                   Подробнее
                 </Button>
               </div>
@@ -87,38 +105,7 @@ export default function MainPage() {
               <img src={aboutFundPic} alt="7 years" />
             </div>
 
-            <div className={styles["about-fund-partners-container"]}>
-              <div>
-                <h4>Наши партнеры</h4>
-                <hr />
-              </div>
-
-              <div className={styles["about-fund-partners"]}>
-                <NavLink to="/">
-                  <img src={partner1} alt="partner1" /> Партнёр 1
-                </NavLink>
-
-                <NavLink to="/">
-                  <img src={partner1} alt="partner2" /> Партнёр 2
-                </NavLink>
-
-                <NavLink to="/">
-                  <img src={partner1} alt="partner3" /> Партнёр 3
-                </NavLink>
-
-                <NavLink to="/">
-                  <img src={partner1} alt="partner4" /> Партнёр 4
-                </NavLink>
-
-                <NavLink to="/">
-                  <img src={partner1} alt="partner5" /> Партнёр 5
-                </NavLink>
-
-                <NavLink to="/">
-                  <img src={partner1} alt="partner6" /> Партнёр 6
-                </NavLink>
-              </div>
-            </div>
+            <Partners />
 
             <div className={styles["about-fund-team"]}>
               <div className={styles["about-fund-team-info"]}>
@@ -154,7 +141,12 @@ export default function MainPage() {
                   </div>
                 </div>
 
-                <Button className={styles.button} onClick={() => {}}>
+                <Button
+                  className={styles.button}
+                  onClick={() => {
+                    onClickOpenPage(navigate, "/about");
+                  }}
+                >
                   О команде
                 </Button>
               </div>
@@ -166,10 +158,9 @@ export default function MainPage() {
 
         <section className={styles.principles}>
           <div className={styles["principles-container"]}>
-            <div className={styles["principles-title"]}>
-              <hr />
-              <h4>ПРИНЦИПЫ</h4>
-            </div>
+            <SectionTitle styles={styles} className="principles-title">
+              ПРИНЦИПЫ
+            </SectionTitle>
 
             <div className={styles["principles-target"]}>
               <div className={styles["principles-target-detail"]}>
@@ -253,7 +244,12 @@ export default function MainPage() {
               <p>10% Другие отрасли</p>
             </div>
 
-            <Button className={styles.button} onClick={() => {}}>
+            <Button
+              className={styles.button}
+              onClick={() => {
+                onClickOpenPage(navigate, "/directions");
+              }}
+            >
               Узнать подробнее
             </Button>
           </div>
@@ -265,17 +261,18 @@ export default function MainPage() {
           />
         </section>
 
-        <section className={styles.questions}>
-          <div>
-            <h2>Если у вас есть вопросы, мы будем рады на них ответить</h2>
-            <Button className={styles.button} onClick={() => {}}>
-              Связаться
-            </Button>
-          </div>
-        </section>
+        <Questions
+          styles={styles}
+          className="questions"
+          classNameBtn="button"
+          onClick={() => {}}
+        />
 
-        <section className={styles.news}>
-          <h3>Главные новости</h3>
+        {/* <section className={styles.news}>
+          <div>
+            <h3>Главные новости</h3>
+            <hr />
+          </div>
           <div className={styles["news-container"]}>
             {newsData.news.map((news) => (
               <Card
@@ -286,7 +283,9 @@ export default function MainPage() {
               />
             ))}
           </div>
-        </section>
+        </section> */}
+
+        <News />
       </main>
     </Layout>
   );

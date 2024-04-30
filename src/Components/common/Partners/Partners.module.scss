@@ -1,0 +1,61 @@
+@import "../../../styles/mixins";
+
+.partners-container {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+
+    h4 {
+      width: 11vw;
+      min-width: 129px;
+      max-width: 164px;
+      @include adaptive-font(12, 16);
+      @include adaptive-line-height(14.06, 18.75);
+      letter-spacing: 2px;
+      color: #272727;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    hr {
+      width: 72vw;
+      border: 1px solid #e5e5e5;
+    }
+  }
+
+  .partners {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    column-gap: 53px;
+    row-gap: 40px;
+    margin-top: 30px;
+    width: 85.33vw;
+    justify-content: space-around;
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: grey;
+
+      img {
+        width: 28px;
+        height: 28px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  @include tablet {
+    margin-top: 60px;
+  }
+}
