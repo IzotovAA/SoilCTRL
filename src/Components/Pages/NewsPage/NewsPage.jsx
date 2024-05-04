@@ -1,9 +1,10 @@
 import Layout from "../../Layout/Layout";
+import News from "../../common/News/News";
 
 export default function NewsPage() {
   return (
     <Layout>
-      <h1>Новости!</h1>
+      <News />
     </Layout>
   );
 }

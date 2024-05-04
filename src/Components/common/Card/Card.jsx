@@ -1,14 +1,19 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Card.module.scss";
 
-export default function Card({ img, title, text }) {
+export default function Card({ img, title, text, onClick }) {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={onClick}>
       <img src={img} alt="pic" />
-      <NavLink to="/">
+
+      <div>
+        {/* <NavLink to="/"> */}
         <h4>{title}</h4>
-      </NavLink>
-      <p>{text}</p>
+        {/* </NavLink> */}
+        <p>{text}</p>
+      </div>
+
+      <hr className={styles.hrmobile} />
     </div>
   );
 }

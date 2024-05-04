@@ -141,7 +141,7 @@ export default function AboutPage() {
         onClick={() => {}}
       />
 
-      <News />
+      <News renderQty={4} />
     </Layout>
   );
 }

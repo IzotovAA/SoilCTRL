@@ -40,18 +40,19 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 24px;
-    row-gap: 40px;
+    // row-gap: 40px;
+    row-gap: 24px;
     justify-content: center;
     align-items: center;
     align-content: center;
 
     @include mobile {
       justify-content: flex-start;
-      row-gap: 78px;
+      row-gap: 40px;
     }
   }
 
   @include mobile {
-    margin: 60px auto 100px auto;
+    margin: 60px auto;
   }
 }
