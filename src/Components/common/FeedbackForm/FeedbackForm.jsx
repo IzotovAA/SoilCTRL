@@ -45,7 +45,7 @@ export default function FeedbackForm({ open, onClose }) {
             name="Почта или другой удобный способ связи"
           />
 
-          <Input
+          {/* <Input
             className={styles["feedback-body-message"]}
             placeholder="Напишите Ваше сообщение"
             label={true}
@@ -53,7 +53,23 @@ export default function FeedbackForm({ open, onClose }) {
             labelClass={styles["feedback-body-message-lb"]}
             id="message"
             name="Сообщение"
-          />
+          /> */}
+
+          <div className={styles["input-wrap-full"]}>
+            <label
+              htmlFor="message"
+              className={styles["feedback-body-message-lb"]}
+            >
+              Сообщение
+            </label>
+
+            <textarea
+              placeholder="Напишите Ваше сообщение"
+              className={styles["feedback-body-message"]}
+              id="message"
+              name="message"
+            ></textarea>
+          </div>
 
           <Button className={styles["feedback-body-btn"]} type="submit">
             Отправить

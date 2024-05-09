@@ -1,10 +1,10 @@
-import Layout from "../../Layout/Layout";
+import { useEffect } from "react";
 import News from "../../common/News/News";
 
 export default function NewsPage() {
-  return (
-    <Layout>
-      <News />
-    </Layout>
-  );
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return <News />;
 }

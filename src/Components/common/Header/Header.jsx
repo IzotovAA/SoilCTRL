@@ -1,15 +1,14 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Button from "../Button/Button";
 import FeedbackForm from "../FeedbackForm/FeedbackForm";
 import Logo from "../Logo/Logo";
 import Popup from "../Popup/Popup";
 import styles from "./Header.module.scss";
 import { NavLink } from "react-router-dom";
+import { FormContext } from "../../../utils/Context";
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const { open, handleOpen, handleClose } = useContext(FormContext);
 
   return (
     <>

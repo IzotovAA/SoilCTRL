@@ -2,7 +2,7 @@ import Card from "../Card/Card";
 import styles from "./News.module.scss";
 import { newsData } from "../../../services/newsData";
 import { useState } from "react";
-import { onClickOpenPage } from "../../../services/onClick";
+import { onClickOpenPage } from "../../../utils/onClick";
 import { useNavigate } from "react-router-dom";
 import Post from "../Post/Post";
 

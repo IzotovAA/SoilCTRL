@@ -1,4 +1,3 @@
-import Layout from "../../Layout/Layout";
 import SectionTitle from "../../common/SectionTitle/SectionTitle";
 import styles from "./AboutPage.module.scss";
 import aboutPic from "../../../assets/about-pic.jpg";
@@ -10,10 +9,18 @@ import icon3 from "../../../assets/about-page-icon3.svg";
 import icon4 from "../../../assets/about-page-icon4.svg";
 import Questions from "../../common/Questions/Questions";
 import News from "../../common/News/News";
+import { useEffect } from "react";
+import useFormContext from "../../../utils/Context";
 
 export default function AboutPage() {
+  const { handleOpen } = useFormContext();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <Layout>
+    <>
       <section className={styles["about-us"]}>
         <div className={styles["about-us-container"]}>
           <SectionTitle styles={styles} className="about-us-title">
@@ -46,8 +53,6 @@ export default function AboutPage() {
             alt="about pic"
             className={styles["about-us-img-mob"]}
           />
-
-          {/* <div className={styles["about-us-img"]}></div> */}
         </div>
       </section>
 
@@ -138,10 +143,10 @@ export default function AboutPage() {
         className="questions"
         classNameBtn="button"
         btnText="Оставить заявку"
-        onClick={() => {}}
+        onClick={handleOpen}
       />
 
       <News renderQty={4} />
-    </Layout>
+    </>
   );
 }
