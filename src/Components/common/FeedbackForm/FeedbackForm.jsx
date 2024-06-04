@@ -4,10 +4,17 @@ import Modal from "@mui/material/Modal";
 import formClose from "../../../assets/form-close.svg";
 import Button from "../Button/Button";
 
-export default function FeedbackForm({ open, onClose }) {
+export default function FeedbackForm({ open, onClose, submitForm }) {
   return (
     <Modal open={open} onClose={onClose}>
-      <form className={styles.feedback} onSubmit={() => {}}>
+      <form
+        encType="multipart/form-data"
+        method="post"
+        className={styles.feedback}
+        onSubmit={(event) => submitForm(event, onClose)}
+        action="send.php"
+        id="feedback form"
+      >
         <img src={formClose} alt="close" onClick={onClose} />
 
         <div className={styles["feedback-header"]}>
@@ -23,7 +30,8 @@ export default function FeedbackForm({ open, onClose }) {
               wrapperClass={styles["input-wrap-half"]}
               labelClass={styles["feedback-body-name-lb"]}
               id="name"
-              name="Имя"
+              labelName="Имя"
+              name="name"
             />
 
             <Input
@@ -32,7 +40,8 @@ export default function FeedbackForm({ open, onClose }) {
               wrapperClass={styles["input-wrap-half"]}
               labelClass={styles["feedback-body-surname-lb"]}
               id="surname"
-              name="Фамилия"
+              labelName="Фамилия"
+              name="surname"
             />
           </div>
 
@@ -42,7 +51,8 @@ export default function FeedbackForm({ open, onClose }) {
             wrapperClass={styles["input-wrap-full"]}
             labelClass={styles["feedback-body-email-lb"]}
             id="email"
-            name="Почта или другой удобный способ связи"
+            labelName="Почта или другой удобный способ связи"
+            name="email"
           />
 
           {/* <Input

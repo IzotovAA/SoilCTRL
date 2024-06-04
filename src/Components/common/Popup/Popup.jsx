@@ -62,25 +62,25 @@ export default function Popup() {
               alignItems: "center",
             }}
           >
-            <ListItemButton>
+            <ListItemButton onClick={toggleDrawer(false)}>
               <NavLink to="/" style={{ color: "#747474" }}>
                 Главная
               </NavLink>
             </ListItemButton>
 
-            <ListItemButton>
+            <ListItemButton onClick={toggleDrawer(false)}>
               <NavLink to="/about" style={{ color: "#747474" }}>
                 Компания
               </NavLink>
             </ListItemButton>
 
-            <ListItemButton>
+            <ListItemButton onClick={toggleDrawer(false)}>
               <NavLink to="/directions" style={{ color: "#747474" }}>
                 Направления
               </NavLink>
             </ListItemButton>
 
-            <ListItemButton>
+            <ListItemButton onClick={toggleDrawer(false)}>
               <NavLink to="/news" style={{ color: "#747474" }}>
                 Новости
               </NavLink>

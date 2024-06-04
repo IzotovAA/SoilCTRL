@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import { FormContext } from "../../../utils/Context";
 
 export default function Header() {
-  const { open, handleOpen, handleClose } = useContext(FormContext);
+  const { open, handleOpen, handleClose, submitForm } = useContext(FormContext);
 
   return (
     <>
@@ -39,7 +39,11 @@ export default function Header() {
           </Button>
           <Popup />
 
-          <FeedbackForm open={open} onClose={handleClose} />
+          <FeedbackForm
+            open={open}
+            onClose={handleClose}
+            submitForm={submitForm}
+          />
         </div>
       </header>
     </>

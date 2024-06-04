@@ -6,6 +6,7 @@ export default function Input({
   wrapperClass = "",
   labelClass = "",
   id = "",
+  labelName = "",
   name = "",
 }) {
   return (
@@ -24,13 +25,14 @@ export default function Input({
       {label ? (
         <div className={wrapperClass}>
           <label htmlFor={id} className={labelClass}>
-            {name}
+            {labelName}
           </label>
           <input
             type={type}
             className={className}
             placeholder={placeholder}
             id={id}
+            name={name}
           />
         </div>
       ) : (
